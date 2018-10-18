@@ -23,6 +23,7 @@ import javax.swing.*;
 
             while (score != 30) {
 
+                //LV1
 
                 if (score <= 9) {
 
@@ -47,11 +48,14 @@ import javax.swing.*;
                             eingabe = JOptionPane.showInputDialog(zahl1 + " * " + zahl2 + " = "); //Eingabefeld
 
                             try {
-                                keingabe = Integer.parseInt(eingabe);
+                                keingabe = Integer.parseInt(eingabe); //Konvertierung von einem String --> Int
 
                                 break;
-                            } //Konvertierung von einem String --> Int
+                            }
                             catch (Exception e) {
+
+                                //Ungültige eingabe
+
                                 JOptionPane.showConfirmDialog(null,
                                         "Du hast einen Falschen Wert eingegeben",
                                         "ERROR!",
@@ -62,10 +66,11 @@ import javax.swing.*;
                         } while (keingabe == 0);
 
 
-                        //Check ob der Wert stimmt!
+                        //Berechnen der Lösung
 
                         loesung = zahl1 * zahl2;
 
+                        //Checken ob die Lösung richtig ist.
 
                         if (loesung == keingabe) {
                             score++;
@@ -89,9 +94,9 @@ import javax.swing.*;
                     }
                 }
 
-                while (score <= 19) {
-                    zahl1 = (int) (Math.random() * 15 + 5);
-                    zahl2 = (int) (Math.random() * 15 + 5);
+                //LV2
+
+                if (score <= 19) {
 
                     JOptionPane.showConfirmDialog(null,
                             "Level 2",
@@ -99,31 +104,61 @@ import javax.swing.*;
                             JOptionPane.DEFAULT_OPTION,
                             JOptionPane.INFORMATION_MESSAGE);
 
-                    eingabe = JOptionPane.showInputDialog(zahl1 + " * " + zahl2 + " = ");
-                    keingabe = Integer.parseInt(eingabe);
+                    while (score <= 19) {
 
-                    loesung = zahl1 * zahl2;
+                        zahl1 = (int) (Math.random() * 15 + 5);
+                        zahl2 = (int) (Math.random() * 15 + 5);
 
-                    if (loesung == keingabe)  {
+                        do {
 
-                        score++;
+                            zahl1 = (int) (Math.random() * 15 + 5); //Generieren der Zufälligen Zahlen
+                            zahl2 = (int) (Math.random() * 15 + 5);
 
-                        JOptionPane.showConfirmDialog(null,
-                                "Die Antwort war Richtig. Dein Aktueller Punktestand ist:" + score,
-                                "RICHTIG!",
-                                JOptionPane.DEFAULT_OPTION,
-                                JOptionPane.INFORMATION_MESSAGE);
-                    }
+                            eingabe = JOptionPane.showInputDialog(zahl1 + " * " + zahl2 + " = "); //Eingabefeld
 
-                    if (loesung != keingabe) {
+                            try {
+                                keingabe = Integer.parseInt(eingabe); //Konvertierung von einem String --> Int
 
-                        JOptionPane.showConfirmDialog(null,
-                                "Die Antwort war Falsch. Dein Aktueller Punktestand ist:" + score,
-                                "FALSCH!",
-                                JOptionPane.DEFAULT_OPTION,
-                                JOptionPane.ERROR_MESSAGE);
+                                break;
+                            } catch (Exception e) {
+
+                                //Ungültige eingabe
+
+                                JOptionPane.showConfirmDialog(null,
+                                        "Du hast einen Falschen Wert eingegeben",
+                                        "ERROR!",
+                                        JOptionPane.DEFAULT_OPTION,
+                                        JOptionPane.ERROR_MESSAGE);
+                            }
+
+                        } while (keingabe == 0);
+
+                        loesung = zahl1 * zahl2;
+
+                        if (loesung == keingabe) {
+
+                            score++;
+
+                            JOptionPane.showConfirmDialog(null,
+                                    "Die Antwort war Richtig. Dein Aktueller Punktestand ist:" + score,
+                                    "RICHTIG!",
+                                    JOptionPane.DEFAULT_OPTION,
+                                    JOptionPane.INFORMATION_MESSAGE);
+                        }
+
+                        if (loesung != keingabe) {
+
+                            JOptionPane.showConfirmDialog(null,
+                                    "Die Antwort war Falsch. Dein Aktueller Punktestand ist:" + score,
+                                    "FALSCH!",
+                                    JOptionPane.DEFAULT_OPTION,
+                                    JOptionPane.ERROR_MESSAGE);
+                        }
+
                     }
                 }
+
+                //LV 3
 
                 while (score <= 29) {
 
