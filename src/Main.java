@@ -15,6 +15,8 @@ import javax.swing.*;
 
             String eingabe;
 
+            // Max ist toll
+
             JOptionPane.showConfirmDialog(null,
                     "Der Matheskill Tester",
                     "Der Matheskill Tester",
@@ -75,7 +77,7 @@ import javax.swing.*;
                         if (loesung == keingabe) {
                             score++;
                             JOptionPane.showConfirmDialog(null,
-                                    "Die Antwort war Richtig. Dein Aktueller Punktestand ist:" + score,
+                                    "Die Antwort war Richtig. Dein Aktueller Punktestand ist :" + score,
                                     "RICHTIG!",
                                     JOptionPane.DEFAULT_OPTION,
                                     JOptionPane.INFORMATION_MESSAGE);
@@ -84,7 +86,7 @@ import javax.swing.*;
                         if (loesung != keingabe) {
 
                             JOptionPane.showConfirmDialog(null,
-                                    "Die Antwort war Falsch. Dein Aktueller Punktestand ist:" + score,
+                                    "Die Antwort war Falsch. Dein Aktueller Punktestand ist: " + score,
                                     "FALSCH!",
                                     JOptionPane.DEFAULT_OPTION,
                                     JOptionPane.ERROR_MESSAGE);
