@@ -1,5 +1,4 @@
 import javax.swing.*;
-//Test
     public class Main {
 
         public static void main(String[] args) {
@@ -14,8 +13,6 @@ import javax.swing.*;
             int keingabe = 0;
 
             String eingabe;
-
-            // Max ist toll
 
             JOptionPane.showConfirmDialog(null,
                     "Der Matheskill Tester",
